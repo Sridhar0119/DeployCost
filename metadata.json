@@ -1,0 +1,6 @@
+{
+  "name": "DeployCost Dashboard",
+  "description": "Estimate AWS, Azure, GCP, and DigitalOcean deployment costs, analyze Docker and Kubernetes manifests, and manage organization budgets.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

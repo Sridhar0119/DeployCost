@@ -1,0 +1,42 @@
+# DeployCost Dashboard - System & Node.js Dependency Requirements
+
+# Runtime Environment
+node==22.x
+npm==10.x
+
+# Core Application Server (Express)
+express==4.21.2
+express-session==1.19.0
+cors==2.8.6
+dotenv==17.2.3
+helmet==8.2.0
+express-rate-limit==8.5.2
+
+# Persistence & Uploads
+sqlite3 (native build / experimental node driver)
+multer==2.2.0
+adm-zip==0.5.18
+js-yaml==5.2.0
+joi==18.2.3
+
+# AI & Machine Learning
+@google/genai==2.4.0
+
+# Authentication (Passport.js)
+passport==0.7.0
+passport-google-oauth20==2.0.0
+passport-github2==0.1.12
+
+# Client Frontend framework (React 19)
+react==19.0.1
+react-dom==19.0.1
+react-router-dom==7.18.1
+lucide-react==0.546.0
+recharts==3.9.0
+motion==12.23.24
+
+# Build Tooling
+vite==6.2.3
+esbuild==0.25.0
+typescript==5.8.2
+tsx==4.21.0

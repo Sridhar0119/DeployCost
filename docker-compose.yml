@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: deploycost-dashboard
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - DB_PATH=/app/data/deploycost.db
+      # Load environment secrets or pass dummy/placeholder values
+      - SESSION_SECRET=deploycost-production-secret-99
+      - ALLOW_DEV_LOGIN=true
+      # Inject your credentials here or in a local .env file
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID:-}
+      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET:-}
+      - GITHUB_CLIENT_ID=${GITHUB_CLIENT_ID:-}
+      - GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET:-}
+    volumes:
+      # Persist SQLite database outside the container
+      - deploycost-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  deploycost-data:
